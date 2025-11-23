@@ -1,0 +1,14 @@
+version: 0.0
+os: linux
+files:
+  - source: / # Source is the root of the artifact from CodePipeline/GitHub
+    destination: /var/www/html # Destination on the EC2 instance (Apache web root)
+hooks:
+  BeforeInstall:
+    - location: scripts/install_dependencies.sh
+      timeout: 300 # 5 minutes
+      runas: root
+  ApplicationStart:
+    - location: scripts/start_server.sh
+      timeout: 60
+      runas: root
