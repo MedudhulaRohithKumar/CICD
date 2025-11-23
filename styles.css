@@ -1,38 +1,133 @@
+/* Basic Reset */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', Arial, sans-serif;
     background-color: #f4f4f9;
     color: #333;
     margin: 0;
     padding: 0;
-    text-align: center;
-}
-
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 20px 0;
-    margin-bottom: 30px;
-}
-
-h1 {
-    margin: 0;
-    font-size: 2.5em;
-}
-
-main {
-    padding: 20px;
-}
-
-p {
-    font-size: 1.1em;
     line-height: 1.6;
 }
 
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Color Palette */
+:root {
+    --primary-color: #007bff; /* Blue */
+    --secondary-color: #28a745; /* Green */
+    --text-color-light: #fff;
+    --text-color-dark: #333;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.primary-bg {
+    background-color: var(--primary-color);
+    color: var(--text-color-light);
+}
+
+/* Header Styling */
+header {
+    padding: 40px 0;
+    text-align: center;
+    background-color: var(--secondary-color);
+    color: var(--text-color-light);
+}
+
+header h1 {
+    font-size: 2.8em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.2em;
+    margin-bottom: 40px;
+    color: var(--primary-color);
+}
+
+.primary-bg h2 {
+    color: var(--text-color-light);
+}
+
+.lead {
+    font-size: 1.3em;
+    font-weight: 400;
+    margin-bottom: 30px;
+}
+
+/* Grid for Problems */
+.grid-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.grid-item {
+    flex: 1;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item h3 {
+    color: var(--secondary-color);
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 0;
+}
+
+/* Features Cards */
+.features-list {
+    display: flex;
+    justify-content: space-around;
+    gap: 30px;
+    text-align: center;
+}
+
+.feature-card {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    color: var(--text-color-dark);
+}
+
+.feature-card h3 {
+    color: var(--primary-color);
+}
+
+/* Footer Styling */
 footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
     background-color: #333;
-    color: white;
-    padding: 10px 0;
+    color: var(--text-color-light);
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .grid-container, .features-list {
+        flex-direction: column;
+    }
 }
